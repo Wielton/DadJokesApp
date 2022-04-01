@@ -5,12 +5,12 @@ function getDadJokes(){
         method : "GET",
         url : 'https://icanhazdadjoke.com/',
         headers : {
-            // upon investigation I realized instead of "Content-type"
+            // upon investigation, instead of "Content-type"
             // the header had to be Accept
             Accept : "application/json"
         } 
     })
-    //  I forget to change .then to listJoke instead of postSuccess.
+    //  I forgot to change .then to listJoke instead of postSuccess.
     //  I was receiving a response but from the unintended spot
     .then(listJoke).catch(postFailure);
 }
@@ -22,8 +22,13 @@ function postFailure(error){
     console.log(error);
 }
 function listJoke(response){
-    document.getElementById('jokeDisplay');
-    console.log(response.data.joke);
+    let dadJoke = response.data.joke;
+    console.log(dadJoke);
+    document.getElementById('jokeDisplay').innerText = dadJoke;
+    
+    
+
+    
     
 }
 
