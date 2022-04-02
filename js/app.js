@@ -21,60 +21,32 @@ function postSuccess(){
 function postFailure(error){
     console.log(error);
 }
+// Make sure you page tells the user when the API is loading, or if it ever errors.
 function listJoke(response){
     let dadJoke = response.data.joke;
     console.log(dadJoke);
     document.getElementById('jokeDisplay').innerText = dadJoke;
-    
-    
-
-    
-    
 }
+// make this thumbs toggle stay highlighted or not instead of a like button
+function thumbsUpToggle(x) {
+    x.classList.toggle("fa-thumbs-down");
+}
+document.getElementById('generateJoke').addEventListener('click', getDadJokes);
 
 
 
 /*
-// ----  Meal Generator
 
-function getMeal(){
-    axios.request({
-        method: "GET",
-        url : "https://www.themealdb.com/api/json/v1/1/search.php",
-        // make the search dynamic:
-        params : {
-            s : document.getElementById('mealInput').value
-        }
-    }).then(listIngredients).catch(recipeError);
-}
-
-function listIngredients(response){
-    console.log(response.data);
-    console.log(response.data.meals);
-    let myMeal = response.data.meals[0];
-    console.log(myMeal);
-    document.getElementById('mealContainer').innerText = "";
-    let name = myMeal.strMeal;
-    console.log(name);
-    let firstThreeIng = [myMeal.strIngredient1, myMeal.strIngredient2, myMeal.strIngredient3];
-    document.getElementById('mealName').innerText = name;
-    
-    
-    console.log(firstThreeIng);
-    for (let i = 0; i < firstThreeIng.length; i++){
-        addIngredient(firstThreeIng[i]);
+for(let i = 1; i <= 10; i++) {
+    const para = document.createElement('p');
+    para.textContent = 'This is paragraph ' + i + '.';
+    document.body.appendChild(para);
+    addHandler(para, i);
     }
-}
 
-function addIngredient(ingredientName){
-    let ingr = document.createElement('h5');
-    ingr.innerText = ingredientName;
-    document.getElementById('mealCOntainer').append(ingr);
-}
-
-function recipeError(error){
-    console.log(error);
-}
+function addHandler(para, i) {
+    para.onclick = function() {
+        alert('Hello from paragraph ' + i + '!');
+        }
+    }
 */
-
-document.getElementById('generateJoke').addEventListener('click', getDadJokes);

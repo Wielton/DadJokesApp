@@ -1,48 +1,78 @@
 * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Prompt', sans-serif;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Prompt', sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
+
 html {
-    width: 100vw;
-    height: 100vh;
-    
+  width: 100vw;
+  height: 100vh;
 }
+
 body {
-    display: grid;
-    grid-template-rows: 25% auto 25%;
-    height: 100%;
-    background-color: rgba(87, 87, 201, 0.815);
-    text-align: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 25% auto 25%;
+      grid-template-rows: 25% auto 25%;
+  height: 100%;
+  background-color: rgba(181, 181, 224, 0.815);
+  text-align: center;
 }
 
 #jokeGenerator {
-    grid-row: 2 / 3;
-    display: grid;
-    grid-template-rows: 25% 75%;
-    background-color: bisque;
-    width: 80%;
-    height: 300px;
-    margin: auto;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / 3;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 25% 75%;
+      grid-template-rows: 25% 75%;
+  background-color: #5757c9;
+  width: 80%;
+  height: 300px;
+  margin: auto;
+  -webkit-box-shadow: 3px 2px 2px 2px #383838;
+          box-shadow: 3px 2px 2px 2px #383838;
 }
-button {
-    width: 200px;
-    height: 75%;
-    margin: auto;
-    font-size: 1.25em;
-    font-weight: 600;
-    background-color: rgba(87, 87, 201, 0.815);
-    border: none;
-    box-shadow: 1px 2px 2px 2px #383838;
-}
-#jokeWrapper {
-    
-    margin: auto;
-    width: 90%;
-    height: 50%;
-}
-h2 {
 
-
+#jokeGenerator button {
+  width: 200px;
+  height: 75%;
+  margin: auto;
+  font-size: 1.25em;
+  font-weight: 600;
+  background-color: #5757c9;
+  border: none;
+  color: bisque;
+  cursor: pointer;
+  opacity: 0.815;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  -webkit-box-shadow: 1px 2px 2px 2px #383838;
+          box-shadow: 1px 2px 2px 2px #383838;
 }
+
+#jokeGenerator button:hover {
+  opacity: 1;
+}
+
+#jokeGenerator #jokeWrapper {
+  display: block;
+  border: none;
+  margin: auto;
+  width: 90%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(87, 87, 201, 0.815);
+}
+
+#jokeGenerator #jokeWrapper h2 {
+  color: bisque;
+  opacity: 0.815;
+  margin: auto;
+  padding: 2%;
+}
+/*# sourceMappingURL=style.css.map */
